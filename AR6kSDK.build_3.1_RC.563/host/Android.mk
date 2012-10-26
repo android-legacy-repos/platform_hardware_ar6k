@@ -31,7 +31,7 @@ export  ATH_BUILD_TYPE=ANDROID_ARM_NATIVEMMC
 export  ATH_BUS_TYPE=sdio
 export  ATH_OS_SUB_TYPE=linux_2_6
 
-ATH_ANDROID_ROOT:= $(CURDIR)
+ATH_ANDROID_ROOT:=$(CURDIR)
 export ATH_SRC_BASE:=$(ATH_ANDROID_ROOT)/$(BOARD_WLAN_ATHEROS_SDK)/host
 #ATH_CROSS_COMPILE_TYPE:=$(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.3.1/bin/arm-eabi-
 ATH_TARGET_OUTPUT:=$(ATH_ANDROID_ROOT)
@@ -43,7 +43,7 @@ endif
 
 ifndef ATH_LINUXPATH
 #check for Nvidia-base platform
-ifeq ($(TARGET_PRODUCT),$(filter $(TARGET_PRODUCT),cm_betelgeuse))
+ifeq ($(TARGET_DEVICE),$(filter $(TARGET_DEVICE),cooper beni gio tass))
 export ATH_LINUXPATH=$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ
 ATH_CROSS_COMPILE_TYPE:=$(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
 endif
@@ -71,7 +71,8 @@ ifndef ATH_LINUXPATH
 # Link your kernel into android SDK directory as 'kernel' directory
 # export  ATH_LINUXPATH= [Your android/kernel path ]
 ATH_CROSS_COMPILE_TYPE:=$(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.3.1/bin/arm-eabi-
-$(error define your kernel path here for ATH_LINUXPATH)
+#$(error define your kernel path here for ATH_LINUXPATH)
+
 endif 
 
 export  ATH_ARCH_CPU_TYPE=arm

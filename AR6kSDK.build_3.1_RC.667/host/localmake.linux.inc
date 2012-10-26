@@ -9,12 +9,12 @@
 #       ATH_CROSS_COMPILE_TYPE := < cross compiler path >
 #       ATH_LINUXPATH := < kernel source path >
 
-ATH_BSP_TYPE=betelgeuse
-ATH_ANDROID_ROOT=~/bin/cyanogen
+ATH_BSP_TYPE=$(TARGET_DEVICE)
+ATH_ANDROID_ROOT=$(TOPDIR)
 
 # Kernel path
 # Check for Nvidia-base platform
-ifeq ($(ATH_BSP_TYPE),$(filter $(ATH_BSP_TYPE),harmony ventana betelgeuse))
+ifeq ($(ATH_BSP_TYPE),$(filter $(ATH_BSP_TYPE),harmony ventana cooper fit gio tass))
 ATH_ARCH_CPU_TYPE := arm
 ATH_LINUXPATH := $(ATH_ANDROID_ROOT)/out/target/product/$(ATH_BSP_TYPE)/obj/KERNEL_OBJ
 ATH_CROSS_COMPILE_TYPE := $(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-

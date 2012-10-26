@@ -9,14 +9,14 @@
 #       ATH_CROSS_COMPILE_TYPE := < cross compiler path >
 #       ATH_LINUXPATH := < kernel source path >
 
-ATH_BSP_TYPE=betelgeuse
-ATH_ANDROID_ROOT=~/bin/cyanogen
+ATH_BSP_TYPE=$(TARGET_DEVICE)
+ATH_ANDROID_ROOT=$(LOCAL_PATH)/../../..
 
 # Kernel path
 # Check for Nvidia-base platform
-ifeq ($(ATH_BSP_TYPE),$(filter $(ATH_BSP_TYPE),harmony ventana betelgeuse))
+ifeq ($(ATH_BSP_TYPE),$(filter $(ATH_BSP_TYPE),harmony ventana cooper beni gio tass))
 ATH_ARCH_CPU_TYPE := arm
-ATH_LINUXPATH := $(ATH_ANDROID_ROOT)/out/target/product/$(ATH_BSP_TYPE)/obj/kernel
+ATH_LINUXPATH := $(ATH_ANDROID_ROOT)/out/target/product/$(ATH_BSP_TYPE)/obj/KERNEL_OBJ
 ATH_CROSS_COMPILE_TYPE := $(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
 endif
 
@@ -32,7 +32,7 @@ ifeq ($(ATH_BSP_TYPE),$(filter $(ATH_BSP_TYPE),harmony ventana))
 ATH_ARCH_CPU_TYPE := arm
 ATH_LINUXPATH := $(ATH_ANDROID_ROOT)/out/target/product/$(ATH_BSP_TYPE)/obj/KERNEL
 ifeq ($(ATH_BSP_TYPE),$(filter $(ATH_BSP_TYPE),harmony))
-ATH_CROSS_COMPILE_TYPE := $(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin/arm-eabi-
+ATH_CROSS_COMPILE_TYPE := $(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
 endif
 ifeq ($(ATH_BSP_TYPE),$(filter $(ATH_BSP_TYPE),ventana))
 ATH_CROSS_COMPILE_TYPE := $(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
@@ -45,7 +45,7 @@ ifndef ATH_LINUXPATH
 ifeq ($(ATH_BSP_TYPE),$(filter $(ATH_BSP_TYPE),imx51_bbg))
 ATH_ARCH_CPU_TYPE := arm
 ATH_LINUXPATH := $(ATH_ANDROID_ROOT)/out/target/product/$(ATH_BSP_TYPE)/obj/KERNEL
-ATH_CROSS_COMPILE_TYPE := $(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin/arm-eabi-
+ATH_CROSS_COMPILE_TYPE := $(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
 endif
 endif
 
@@ -55,7 +55,7 @@ ifndef ATH_LINUXPATH
 # Link your kernel into android SDK directory as 'kernel' directory
 # export  ATH_LINUXPATH= [Your android/kernel path ]
 $(error define your kernel path here for ATH_LINUXPATH)
-ATH_CROSS_COMPILE_TYPE := $(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.3.1/bin/arm-eabi-
+ATH_CROSS_COMPILE_TYPE := $(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
 endif
 
   $(info *************************)

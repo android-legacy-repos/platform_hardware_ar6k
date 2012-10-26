@@ -156,7 +156,7 @@ endif
 	$(_MAKE_BIN_OUTPUT_DIR)
 	$(MAKE)  $(_CROSS_COMPILE_LINE) -C $(ATH_LINUXPATH) ATH_HIF_TYPE=$(ATH_HIF_TYPE) SUBDIRS=$(ATH_SRC_BASE)/os/linux modules
 	$(MAKE) -C hif/$(ATH_HIF_TYPE)
-#	$(MAKE) -C tools/wmiconfig/
+	$(MAKE) -C tools/wmiconfig/
 #	$(MAKE) -C tools/recEvent/
 	cp -f $(ATH_SRC_BASE)/os/linux/ar6000.$(KMOD_EXTENSION) $(COMPILED_IMAGE_OBJECTS_PATH)
 	$(STRIP) -g -S -d $(COMPILED_IMAGE_OBJECTS_PATH)/ar6000.$(KMOD_EXTENSION)
