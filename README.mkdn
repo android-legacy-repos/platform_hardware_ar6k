@@ -3,11 +3,11 @@ AR6000 MODULE
 
 Usage
 -----
-To compile succesfully on Jellaxy/Jellaxy sources, put this in the root-source directory of your android-setup.
+To compile succesfully on Jellaxy/JellaxyAOKP sources, put this in the root-source directory of your android-setup.
 Set in /device/samsung/msm7x27/BoardConfigCommon.mk:
 
     BOARD_WLAN_CHIP_AR6003                  := true
-    BOARD_WLAN_ATHEROS_SDK	            := AR6kSDK.3.1/AR6kSDK.build_3.1_RC.xxx
+    BOARD_WLAN_ATHEROS_SDK	                := AR6kSDK.3.1/AR6kSDK.build_3.1_RC.xxx
 
 This assumes your are using intergrated kernel building.
 If you are using a prebuilt kernel, compile ar6000.ko first (google is your best howto!) and put the compiled ar6000.ko in:
