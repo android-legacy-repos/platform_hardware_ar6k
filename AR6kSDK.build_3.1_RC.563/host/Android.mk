@@ -38,14 +38,14 @@ ATH_TARGET_OUTPUT:=$(ATH_ANDROID_ROOT)
 
 ifeq ($(TARGET_PRODUCT),$(filter $(TARGET_PRODUCT),qsd8250_surf qsd8250_ffa msm7627_surf msm7627_ffa msm7627a msm7625_ffa msm7625_surf msm7630_surf))
 export  ATH_LINUXPATH=$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ
-ATH_CROSS_COMPILE_TYPE:=$(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.3.1/bin/arm-eabi-
+ATH_CROSS_COMPILE_TYPE:=$(ATH_ANDROID_ROOT)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-
 endif
 
 ifndef ATH_LINUXPATH
 #check for Nvidia-base platform
-ifeq ($(TARGET_DEVICE),$(filter $(TARGET_DEVICE),cooper beni gio tass))
+ifeq ($(TARGET_DEVICE),$(filter $(TARGET_DEVICE),cooper beni gio tass jenad jena))
 export ATH_LINUXPATH=$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ
-ATH_CROSS_COMPILE_TYPE:=$(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
+ATH_CROSS_COMPILE_TYPE:=$(ATH_ANDROID_ROOT)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-
 endif
 endif
 
@@ -61,7 +61,7 @@ ifndef ATH_LINUXPATH
 #check for IMX51 platform
 ifeq ($(TARGET_PRODUCT),$(filter $(TARGET_PRODUCT),imx51_bbg imx53_smd))
 export ATH_LINUXPATH=$(ATH_ANDROID_ROOT)/kernel_imx
-ATH_CROSS_COMPILE_TYPE:=$(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.3.1/bin/arm-eabi-
+ATH_CROSS_COMPILE_TYPE:=$(ATH_ANDROID_ROOT)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-
 endif
 endif
 
@@ -70,7 +70,7 @@ ifndef ATH_LINUXPATH
 # Comment out the following variable and $(error) for your platform
 # Link your kernel into android SDK directory as 'kernel' directory
 # export  ATH_LINUXPATH= [Your android/kernel path ]
-ATH_CROSS_COMPILE_TYPE:=$(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.3.1/bin/arm-eabi-
+ATH_CROSS_COMPILE_TYPE:=$(ATH_ANDROID_ROOT)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-
 #$(error define your kernel path here for ATH_LINUXPATH)
 
 endif 
