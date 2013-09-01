@@ -13,10 +13,10 @@ ATH_BSP_TYPE=$(TARGET_DEVICE)
 ATH_ANDROID_ROOT=$(TOPDIR)
 
   # Kernel path
-ifeq ($(ATH_BSP_TYPE),$(filter $(ATH_BSP_TYPE),beni cooper gio tass))
+ifeq ($(ATH_BSP_TYPE),$(filter $(ATH_BSP_TYPE),beni cooper gio tass jena jenad))
 ATH_ARCH_CPU_TYPE := arm
 ATH_LINUXPATH := $(ATH_ANDROID_ROOT)/out/target/product/$(ATH_BSP_TYPE)/obj/KERNEL_OBJ
-ATH_CROSS_COMPILE_TYPE := $(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.3.1/bin/arm-eabi-
+ATH_CROSS_COMPILE_TYPE := $(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin/arm-eabi-
 endif
 
 ifndef ATH_LINUXPATH
@@ -25,10 +25,10 @@ ifeq ($(ATH_BSP_TYPE),$(filter $(ATH_BSP_TYPE),harmony ventana))
 ATH_ARCH_CPU_TYPE := arm
 ATH_LINUXPATH := $(ATH_ANDROID_ROOT)/out/target/product/$(ATH_BSP_TYPE)/obj/KERNEL
 ifeq ($(ATH_BSP_TYPE),$(filter $(ATH_BSP_TYPE),harmony))
-ATH_CROSS_COMPILE_TYPE := $(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin/arm-eabi-
+ATH_CROSS_COMPILE_TYPE := $(ATH_ANDROID_ROOT)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-
 endif
 ifeq ($(ATH_BSP_TYPE),$(filter $(ATH_BSP_TYPE),ventana))
-ATH_CROSS_COMPILE_TYPE := $(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
+ATH_CROSS_COMPILE_TYPE := $(ATH_ANDROID_ROOT)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-
 endif
 endif
 endif
@@ -38,7 +38,7 @@ ifndef ATH_LINUXPATH
 ifeq ($(ATH_BSP_TYPE),$(filter $(ATH_BSP_TYPE),imx51_bbg))
 ATH_ARCH_CPU_TYPE := arm
 ATH_LINUXPATH := $(ATH_ANDROID_ROOT)/out/target/product/$(ATH_BSP_TYPE)/obj/KERNEL
-ATH_CROSS_COMPILE_TYPE := $(ATH_ANDROID_ROOT)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin/arm-eabi-
+ATH_CROSS_COMPILE_TYPE := $(ATH_ANDROID_ROOT)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-
 endif
 endif
 
